@@ -42,3 +42,8 @@
   display: 'flex';
   column-Gap:10px;
 }
+
+.img{
+  height: 50%;
+  width: 50%;
+}
