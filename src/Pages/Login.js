@@ -10,8 +10,8 @@ import Popover from '@mui/material/Popover';
 import LogoutIcon from '@mui/icons-material/Logout';
 import { Margin } from "@mui/icons-material";
 export const Login = () => {
-    const [name,setName] = useState("Dev");
-    const [email,setEmail] = useState("devnkheradiya@gmail.com");
+    const [name,setName] = useState("Vishvam");
+    const [email,setEmail] = useState("Vsihvamshah786@gmail.com");
     const [open,setOpen] = useState(false); 
     const Navigate = useNavigate()
     const [anchorEl, setAnchorEl] = useState(null);
@@ -49,7 +49,7 @@ export const Login = () => {
                     alignItems: 'center',
                     columnGap: 5
                 }}>
-                    <Avatar sx={{bgcolor: "#526D82"}}>DK</Avatar>
+                    <Avatar sx={{bgcolor: "#526D82"}}>VS</Avatar>
                 </div>
                 
             </div>
@@ -100,7 +100,7 @@ export const Login = () => {
                     alignItems: 'center'
                 }}
                 >
-                    <h3>Dev Kheradiya <LogoutIcon onClick={onHomePageButtonClick}/></h3>
+                    <h3>Vishvam Shah<LogoutIcon onClick={onHomePageButtonClick}/></h3>
                     
                 </div>
             </Popover>
