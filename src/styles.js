@@ -7,7 +7,7 @@ export const theme = createTheme({
           root: ({ ownerState }) => ({
             ...(ownerState.variant === 'contained' &&
               ownerState.color === 'primary' && {
-                backgroundColor: '#27374D',
+                backgroundColor: '#E76161',
                 color: '#fff',
               }),
           }),
