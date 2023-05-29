@@ -22,17 +22,19 @@ export const Registration = () => {
     const Navigate = useNavigate()
     const [anchorEl, setAnchorEl] = useState(null);
     const [user,setUser]=useState([]);
-    useEffect(()=>{
-       axios.get("https://jsonplaceholder.typicode.com/posts").then((res)=>{
-        console.log(res.data);
-        setUser(res.data);
-       })
-    },[]);
+
+    useEffect(() => {
+        axios.get("https://jsonplaceholder.typicode.com/posts").then((res) => {
+          console.log("User detail: ", res.data);
+          setUser(res.data);
+        });
+      }, []);
 
     const initialValues ={
-        Firstname :"",
-        Lastname :"",
-        email :""
+        fname :"",
+        lname :"",
+        email :"",
+        password:""
 
     }
 
@@ -43,48 +45,46 @@ export const Registration = () => {
         "password":Yup.string().min(10,"Password length must be 10 or greater than 10").required("please enter the password"),
       });
 
-    const onFormSubmit = (values) => {
-        console.log(values);
-        const requestData ={
-            userName:values.fname,
-            useremail:values.email,
-        }
-        axios.post("https://jsonplaceholder.typicode.com/posts",requestData).then((res)=>{
-            if(res.statusCode === 201)
-            {
-                console.log(res.data.id);
-                // toast("API call successfull")
-                toast.success('API Call successfully', {
-                    position: "top-right",
-                    autoClose: 3000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "colored",
-                    });
-            }
-        });
-        axios.delete("https://jsonplaceholder.typicode.com/posts/1",requestData).then((res)=>{
-            if(res.statusCode === 200)
-            {
-                console.log(res.data.id);
-                // toast("API call successfull")
-                toast.success('API Data Deleted successfully', {
-                    position: "top-right",
-                    autoClose: 3000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "colored",
-                    });
-            }
-        });
-        
+    const onFormSubmit = async (values) => {
+    console.log("On the form submitted", values);
+
+    const requestData = {
+      userName: values.name,
+      userEmail: values.email,
     };
+
+    // call API to post submit the form
+    const res = await axios.post("https://jsonplaceholder.typicode.com/posts", requestData);
+
+    if (res.status === 201) {
+      console.log(res.data.id);
+      toast.success("API call is completted successfully", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    }
+
+    axios.delete("https://jsonplaceholder.typicode.com/posts/1").then((res) => {
+      if (res.status === 200) {
+        toast.success("Data is deleted successfully", {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+      }
+    });
+  };
     const onHomePageButtonClick = () => {
         Navigate("/");
         console.log("Button clicked");
@@ -230,6 +230,14 @@ export const Registration = () => {
         
          </Formik>
      </div>
+     <div>
+        {user.map((item) => (
+          <div key={item.id}>
+            <h3>{item.title}</h3>
+            <span>{item.body}</span>
+          </div>
+        ))}
+      </div>
      </>
     );
 };

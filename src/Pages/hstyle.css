@@ -1,0 +1,9 @@
+.button{
+    background-color: #80BF32;
+    max-width: 120px;
+    height: 40px;
+    font-size: 16px
+}
+.search{
+    background-color: #414141;
+}
