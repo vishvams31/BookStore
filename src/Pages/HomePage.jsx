@@ -5,6 +5,7 @@ import {useEffect, useState} from "react";
 import {Navigate} from 'react-router-dom';
 import {useNavigate} from "react-router-dom";
 
+
 export const HomePage = () => {
     const Navigate = useNavigate();
     const [open,setOpen] = useState(false); 
