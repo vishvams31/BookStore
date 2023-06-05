@@ -18,8 +18,8 @@ import './css/login.css';
 // import { useUserContext } from "../Components/Header/UserContext";
 import { useContext } from 'react';
 // import { loginContext } from '../Components/Header/AuthContext';
-import LoginProvider from '../Components/Header/LoginProvider';
-
+import LoginContext from '../Components/Header/LoginContext';
+import Footer from '../Components/Footer/Footer';
 
 // import authService from '../service/authService';
 const Login = () => {
@@ -36,7 +36,7 @@ const Login = () => {
 	// 	  setUser(res.data);
 	// 	});
 	//   }, []);
-	const isLogin =  useContext(LoginProvider);
+	const isLogin =  useContext(LoginContext);
 	const Navigate = useNavigate('');
 	const initialValues = {
 		email: '',
@@ -143,7 +143,7 @@ const Login = () => {
 				<div>
 					<div className="center1">
 						<h1 className="loginheader">Login or Create an Account</h1>
-						<hr className="line" />
+						<hr color="red" width='15%' />
 					</div>
 				</div>
 			</div>
@@ -168,6 +168,7 @@ const Login = () => {
 							variant="contained"
 							type="submit"
 							className="btn1"
+							sx={{bgcolor:'#f14d54'}}
 							onClick={() => Navigate('/Registration')}
 						>
 							Create an Account
@@ -258,7 +259,7 @@ const Login = () => {
 											variant="contained"
 											type="submit"
 											disabled={isSubmitting}
-											sx={{width: 100}}
+											sx={{width: 100,bgcolor:'#f14d54'}}
 										>
 											Login
 										</Button>
@@ -269,6 +270,7 @@ const Login = () => {
 					</div>
 				</div>
 			</div>
+			
 		</>
 	);
 };

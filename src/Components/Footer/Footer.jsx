@@ -6,9 +6,9 @@ import logo from './logo.svg';
 const Footer = () => {
 	return (
 		<>
-			<div className="cf">
+			<div className="cf" style={{width:"100%", marginLeft:'0px',paddingLeft:'0px'}}>
 				<footer className='ff'>
-					<Container>
+					<Container sx={{width:"100%"}}>
 						<Stack
 							className="cf"
 							display={'flex'}
@@ -16,7 +16,7 @@ const Footer = () => {
 							justifyContent={'center'}
 							style={{
 								height: 150,
-								backgroundColor: '#fff',
+								backgroundColor: '#F4F4F4',
 							}}
 							spacing={1}
 						>

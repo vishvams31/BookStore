@@ -19,8 +19,8 @@ import Navbar from './Components/Header/Header'
 import Footer from './Components/Footer/Footer';
 // import LoginProvider from './Components/Header/LoginProvider';
 import LoginProvider from './Components/Header/LoginProvider';
+import BookList from './Pages/BookList';
 import EditBook from './Pages/Editbook';
-
 
 const App = () => { 
     return ( 
@@ -83,7 +83,9 @@ const App = () => {
                 <Route path='/Registration' element={< Registration />}></Route>
                 <Route path='/Login' element={< Login />}></Route>
                 <Route path='*' element={< NotFound />}></Route>
-                <Route path='/Editbook' element={< EditBook/>}></Route>
+                <Route path='/BookList' element={<BookList/>}></Route>
+                <Route path='/EditBook' element={ <EditBook />}></Route>
+             
 
             </Routes>
             <Footer/>

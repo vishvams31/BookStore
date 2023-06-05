@@ -45,7 +45,7 @@ const ProductPage=()=>{
     <div style={{marginBottom:'45px'}}></div>
     <div className='searchContainer'>
         <input type='search' placeholder='search' className='productSearch'></input>
-        <button type='submit' className='productbtn' onClick={()=>Navigate('/edit')}>Add Product</button>
+        <button type='submit' className='productbtn' onClick={()=>Navigate('/Editbook')}>Add Product</button>
     </div>
     <div style={{marginBottom:'32px'}}></div>
     <TableContainer component={Paper}>

@@ -146,7 +146,7 @@ const Registration1 = () => {
 				<div>
 					<div className="center">
 						<h1 className="loginheader">Login or Create an Account</h1>
-						<hr className="line" style={{bgcolor: '#f14d54'}} />
+						<hr color="red" width='15%' />
 					</div>
 				</div>
 				<div
@@ -324,7 +324,7 @@ const Registration1 = () => {
 										</div>
 									</div>
 									<div className="btn" style={{marginBottom: '20px'}}>
-										<Button variant="contained" type="submit">
+										<Button variant="contained" type="submit" sx={{bgcolor:'#f14d54'}}>
 											Register
 										</Button>
 									</div>

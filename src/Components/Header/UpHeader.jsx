@@ -5,7 +5,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Button } from '@mui/material';
 import loginContext from '../Header/LoginContext';
 import { toast } from 'react-toastify';
-// import '../css/header.css';
+
 const UpdateNav = () => {
     const isLogin = useContext(loginContext);
     const LinkStyle = {
@@ -48,16 +48,15 @@ const UpdateNav = () => {
         return(
         <>
                 <div >
-                    <Link to='/' style={LinkStyle}>View Book</Link>
-                    <span className='pipe'></span>
-                    <Link to='/' style={LinkStyle} >Edit Book</Link>
-                    <span className='pipe'></span>
-                    <Link to='/' style={LinkStyle}>Login</Link>
-                    <span className='pipe'></span>
-                    <Link to='/' style={LinkStyle} >Register</Link>
-                    
+                    <Link to='/BookList' style={LinkStyle}>View Book</Link>
+                    <span className='pipe'>|</span>
+                    <Link to='/EditBook' style={LinkStyle} >Edit Book</Link>
+                    <span className='pipe'>|</span>
+                    <Link to='/Login' style={LinkStyle}></Link>
+                    <span className='pipe'>|</span>
+                    <Link to='/Registration' style={LinkStyle} >Register</Link>
                 </div>
-                <Button style={logoutbtn} onClick={logoutEvent}>Logout</Button>
+                <Button style={{}} onClick={logoutEvent}>Logout</Button>
         </>
 
         );
